@@ -15,21 +15,24 @@ const files = {
   distImgsPath: "./dist/images",
 };
 
-function htmlTask() {
+function htmlTask(done) {
   src(files.htmlPath).pipe(dest(files.distPath));
+  done();
 }
 
-function scssTask() {
+function scssTask(done) {
   return src(files.scssPath)
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write("."))
     .pipe(dest(files.distPath));
+  done();
 }
 
-function imagesTask() {
+function imagesTask(done) {
   src(files.imgsPath).pipe(image()).pipe(dest(files.distImgsPath));
+  done();
 }
 
 function watchTask() {
@@ -38,19 +41,20 @@ function watchTask() {
   watch(files.imgsPath, series(imagesTask, reload));
 }
 
-function liveReload() {
+function liveReload(done) {
   browserSync.init({
     server: {
       baseDir: files.distPath,
     },
   });
+  done();
 }
 
-function reload() {
+function reload(done) {
   browserSync.reload();
+  done();
 }
 
 exports.default = series(
-  parallel(htmlTask, scssTask, imagesTask, liveReload),
-  watchTask
+  parallel(htmlTask, scssTask, imagesTask, watchTask, liveReload)
 );
