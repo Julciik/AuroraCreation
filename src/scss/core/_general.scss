@@ -1,9 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
 //containers
 .container {
   width: 100vw;
 }
 
 .wrapper {
+  @media (min-width: $bpoint-small) {
+    margin: 0 10px;
+  }
+
+  @media (min-width: $bpoint-large) {
+    margin: 0 40px;
+  }
+
   @media (min-width: $bpoint-extra) {
     max-width: $max-width;
     margin: 0 auto;
@@ -13,4 +25,16 @@
 //fonts
 body {
   font-family: $base-font;
+}
+
+//links
+a {
+  color: $black;
+  text-decoration: none;
+}
+
+//buttons
+button {
+  outline: 0;
+  border: none;
 }

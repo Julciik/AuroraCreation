@@ -1,0 +1,93 @@
+@import "../core/variables";
+
+.header__top {
+  padding-top: 15px;
+  border-bottom: $border-grey;
+  @media (min-width: $bpoint-mob) {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.contact__txt {
+  font-size: $font-header;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  padding-left: $icon-padding;
+  transition: color 0.3s ease-in;
+
+  &:hover {
+    color: $dark-pink;
+  }
+
+  &--telephone {
+    background-image: url("../../images/header-top/tel.png");
+    margin-right: 20px;
+  }
+
+  &--email {
+    background-image: url("../../images/header-top/email.png");
+  }
+}
+
+.header__user {
+  font-size: 0;
+  @media (min-width: $bpoint-mob) {
+    margin-top: 15px;
+  }
+}
+
+.user__btn {
+  font-size: $font-header;
+  background-color: $white;
+  outline: $border-grey;
+  padding: 15px 25px;
+  position: relative;
+  transition: color 0.3s ease-in;
+
+  &::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: $dark-pink;
+    transition: width 0.5s ease-in;
+  }
+
+  &:hover {
+    color: $dark-pink;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &--sign-in {
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      background: url("../../images/header-top/sign-in.png") no-repeat;
+      width: $icon-width-in;
+      height: $icon-height-in;
+      margin-right: 10px;
+      float: left;
+    }
+  }
+
+  &--sign-up {
+    &::before {
+      content: "";
+      display: block;
+      background: url("../../images/header-top/sign-up.png") no-repeat;
+      width: $icon-width-up;
+      height: $icon-height-up;
+      margin-right: 10px;
+      float: left;
+    }
+  }
+}

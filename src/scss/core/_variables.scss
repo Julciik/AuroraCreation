@@ -2,6 +2,7 @@
 $white: #fff;
 $black: #000;
 $pink: #f2dbe0;
+$dark-pink: #ec326c;
 $grey: #d7d7d7;
 
 //fonts
@@ -18,6 +19,19 @@ $extra-bold: 900;
 
 //widths
 $max-width: 1240px;
+
+//icons res
+$icon-width-in: 9px;
+$icon-height-in: 12px;
+$icon-width-up: 12px;
+$icon-height-up: 13px;
+
+//paddings
+$icon-padding: 20px;
+$btn-padding: 25px;
+
+//border
+$border-grey: 1px solid $grey;
 
 //media breakpoints
 $bpoint-mob: 320px;
