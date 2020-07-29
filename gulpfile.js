@@ -4,48 +4,73 @@ const sass = require("gulp-sass");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
+const babel = require("gulp-babel");
+const concat = require("gulp-concat");
+const uglify = require("gulp-uglify");
 const image = require("gulp-image");
 const browserSync = require("browser-sync").create();
 
 const files = {
-  htmlPath: "./src/*.html",
-  scssPath: "./src/scss/**/*.scss",
-  imgsPath: "./src/images/**/*.*",
-  distPath: "./dist",
-  distCssPath: "./dist/css",
-  distImgsPath: "./dist/images",
+  src: {
+    html: "./src/*.html",
+    scss: "./src/scss/**/*.scss",
+    js: "./src/js/**/*.js",
+    img: "./src/images/**/*.*",
+  },
+  dist: {
+    base: "./dist",
+    css: "./dist/css",
+    js: "./dist/js",
+    img: "./dist/images",
+  },
 };
 
 function htmlTask(done) {
-  src(files.htmlPath).pipe(dest(files.distPath));
+  src(files.src.html).pipe(dest(files.dist.base));
   done();
 }
 
 function scssTask(done) {
-  return src(files.scssPath)
+  return src(files.src.scss)
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write("."))
-    .pipe(dest(files.distCssPath));
+    .pipe(dest(files.dist.css));
+  done();
+}
+
+function jsTask(done) {
+  src(files.src.js)
+    .pipe(sourcemaps.init())
+    .pipe(
+      babel({
+        presets: ["@babel/preset-env"],
+      })
+    )
+    .pipe(concat("index.js"))
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(dest(files.dist.js));
   done();
 }
 
 function imagesTask(done) {
-  src(files.imgsPath).pipe(image()).pipe(dest(files.distImgsPath));
+  src(files.src.img).pipe(image()).pipe(dest(files.dist.img));
   done();
 }
 
 function watchTask() {
-  watch(files.htmlPath, series(htmlTask, reload));
-  watch(files.scssPath, series(scssTask, reload));
-  watch(files.imgsPath, series(imagesTask, reload));
+  watch(files.src.html, series(htmlTask, reload));
+  watch(files.src.scss, series(scssTask, reload));
+  watch(files.src.js, series(jsTask, reload));
+  watch(files.src.img, series(imagesTask, reload));
 }
 
 function liveReload(done) {
   browserSync.init({
     server: {
-      baseDir: files.distPath,
+      baseDir: files.dist.base,
     },
   });
   done();
@@ -57,5 +82,5 @@ function reload(done) {
 }
 
 exports.default = series(
-  parallel(htmlTask, scssTask, imagesTask, watchTask, liveReload)
+  parallel(htmlTask, scssTask, jsTask, imagesTask, watchTask, liveReload)
 );

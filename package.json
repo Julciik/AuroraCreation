@@ -17,13 +17,20 @@
   },
   "homepage": "https://github.com/Julciik/AuroraCreation#readme",
   "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
     "autoprefixer": "^9.8.5",
     "browser-sync": "^2.26.12",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-image": "^6.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5"
+  },
+  "dependencies": {
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2"
   }
 }
