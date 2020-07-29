@@ -1,0 +1,86 @@
+@import "../core/variables";
+
+.header__content {
+  width: 100vw;
+  padding: 40px 0 80px 0;
+  display: flex;
+  @media (min-width: $bpoint-mob) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.header__logo {
+  @media (min-width: $bpoint-mob) {
+    margin-bottom: 40px;
+  }
+}
+
+.header__search {
+  position: relative;
+  @media (min-width: $bpoint-mob) {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+.search__input {
+  border: none;
+  border-bottom: 1px solid $black;
+  font-size: $font-header;
+  padding: 10px 25px 10px 10px;
+  width: 100%;
+}
+
+.search__btn {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: 25%;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url("../../images/header/search.png");
+}
+
+.header__basket {
+  @media (min-width: $bpoint-mob) {
+    margin-top: 40px;
+  }
+}
+
+.basket__btn {
+  font-weight: $bold;
+  font-size: $font-header;
+  position: relative;
+  width: 110px;
+  transition: color 0.3s ease-in;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: url("../../images/header/basket.png") no-repeat;
+    height: 31px;
+    width: 26px;
+    left: -20px;
+  }
+
+  &:hover {
+    color: $pink;
+  }
+}
+
+.basket__counter {
+  width: 20px;
+  height: 20px;
+  background-color: $pink;
+  border-radius: 50%;
+  font-weight: $extra-bold;
+  color: $white;
+  font-size: $font-basket;
+  position: absolute;
+  left: -5px;
+  bottom: -25px;
+  line-height: 20px;
+}

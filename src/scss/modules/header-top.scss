@@ -41,7 +41,6 @@
 
 .user__btn {
   font-size: $font-header;
-  background-color: $white;
   outline: $border-grey;
   padding: 15px 25px;
   position: relative;
@@ -67,7 +66,6 @@
   }
 
   &--sign-in {
-    position: relative;
     &::before {
       content: "";
       display: block;
