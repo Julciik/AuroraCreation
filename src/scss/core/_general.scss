@@ -1,0 +1,16 @@
+//containers
+.container {
+  width: 100vw;
+}
+
+.wrapper {
+  @media (min-width: $bpoint-extra) {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+}
+
+//fonts
+body {
+  font-family: $base-font;
+}

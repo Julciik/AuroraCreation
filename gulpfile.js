@@ -12,6 +12,7 @@ const files = {
   scssPath: "./src/scss/**/*.scss",
   imgsPath: "./src/images/**/*.*",
   distPath: "./dist",
+  distCssPath: "./dist/css",
   distImgsPath: "./dist/images",
 };
 
@@ -26,7 +27,7 @@ function scssTask(done) {
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write("."))
-    .pipe(dest(files.distPath));
+    .pipe(dest(files.distCssPath));
   done();
 }
 
