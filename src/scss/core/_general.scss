@@ -22,9 +22,10 @@
   }
 }
 
-//fonts
+//menu
 body {
-  font-family: $base-font;
+  overflow-x: hidden;
+  font-family: $font-base;
 }
 
 //links
@@ -37,5 +38,6 @@ a {
 button {
   outline: 0;
   border: none;
-  background-color: $white;
+  background-color: transparent;
+  padding: 0;
 }

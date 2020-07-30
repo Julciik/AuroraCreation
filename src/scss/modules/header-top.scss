@@ -45,6 +45,7 @@
   padding: 15px 25px;
   position: relative;
   transition: color 0.3s ease-in;
+  font-family: $font-base;
 
   &::after {
     content: "";

@@ -49,17 +49,24 @@
               class="search__input"
               type="text"
               placeholder="Co chcesz kupić?"
+              data-search-input
             />
-            <input class="search__btn" type="submit" value=""></input>
+            <input class="search__btn" type="submit" value="" data-search-btn></input>
           </div>
           <div class="header__basket">
-            <button class="basket__btn">Twój koszyk
+            <button class="basket__btn">
+              <img class="basket__img" src="./images/header/basket.png" alt="Basket">
+              <span class="basket__txt">Twój koszyk</span>
               <span class="basket__counter">2</span>
             </button>
           </div>
-        </div>
         <nav class="header__nav">
-          <ul class="nav__menu">
+          <button class="nav__hamburger" data-hamburger>
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+          </button>
+          <ul class="nav__menu" data-menu>
             <li class="menu__item">
               <a href="" class="menu__link">kategorie</a>
             </li>
@@ -87,6 +94,7 @@
             </li>
           </ul>
         </nav>
+      </div>
       </div>
     </header>
     <script src="./js/index.js"></script>

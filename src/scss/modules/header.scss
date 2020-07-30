@@ -2,72 +2,68 @@
 
 .header__content {
   width: 100vw;
-  padding: 40px 0 80px 0;
+  padding: 30px 20px;
   display: flex;
+  border-bottom: $border-grey;
+  position: relative;
+
   @media (min-width: $bpoint-mob) {
-    flex-direction: column;
-    text-align: center;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
 
 .header__logo {
   @media (min-width: $bpoint-mob) {
-    margin-bottom: 40px;
+    margin-right: auto;
   }
+}
+
+.logo__img {
 }
 
 .header__search {
-  position: relative;
-  @media (min-width: $bpoint-mob) {
-    margin: 0 auto;
-    width: 80%;
-  }
 }
 
 .search__input {
+  font-size: $font-header;
   border: none;
   border-bottom: 1px solid $black;
-  font-size: $font-header;
-  padding: 10px 25px 10px 10px;
-  width: 100%;
+  font-family: $font-base;
+  @media (min-width: $bpoint-mob) {
+    display: none;
+    padding: 10px 5px 5px 5px;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    margin: 0 auto;
+  }
 }
 
 .search__btn {
-  height: 15px;
-  width: 15px;
-  position: absolute;
-  top: 25%;
-  right: 0;
+  width: 20px;
+  height: 20px;
   border: none;
+  padding: 0;
   background-color: transparent;
   background-image: url("../../images/header/search.png");
+  background-size: cover;
 }
 
 .header__basket {
   @media (min-width: $bpoint-mob) {
-    margin-top: 40px;
+    margin: 0 20px;
   }
 }
 
 .basket__btn {
-  font-weight: $bold;
-  font-size: $font-header;
   position: relative;
-  width: 110px;
-  transition: color 0.3s ease-in;
+}
 
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    background: url("../../images/header/basket.png") no-repeat;
-    height: 31px;
-    width: 26px;
-    left: -20px;
-  }
-
-  &:hover {
-    color: $pink;
+.basket__txt {
+  @media (min-width: $bpoint-mob) {
+    display: none;
   }
 }
 
@@ -80,7 +76,11 @@
   color: $white;
   font-size: $font-basket;
   position: absolute;
-  left: -5px;
-  bottom: -25px;
+  right: -5px;
+  bottom: -20%;
   line-height: 20px;
+}
+
+.search__active {
+  display: block;
 }
