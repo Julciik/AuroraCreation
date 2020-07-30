@@ -4,6 +4,10 @@
   @media (min-width: $bpoint-mob) {
     position: relative;
   }
+
+  @media (min-width: $bpoint-large) {
+    position: static;
+  }
 }
 
 .nav__hamburger {
@@ -12,6 +16,10 @@
     width: 30px;
     display: flex;
     flex-direction: column;
+  }
+
+  @media (min-width: $bpoint-large) {
+    display: none;
   }
 }
 
@@ -22,6 +30,14 @@
     background-color: $black;
     margin: 3px 0;
     transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  }
+}
+
+.header__nav {
+  @media (min-width: $bpoint-large) {
+    max-width: $max-width;
+    width: 100%;
+    margin-top: 60px;
   }
 }
 
@@ -39,11 +55,28 @@
     transition: opacity 0.3s ease-in-out;
     z-index: -1;
   }
+
+  @media (min-width: $bpoint-large) {
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    position: static;
+    opacity: 1;
+    transition: none;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .menu__item {
   @media (min-width: $bpoint-mob) {
     margin: 20px 0;
+  }
+
+  @media (min-width: $bpoint-large) {
+    margin: 0;
   }
 }
 

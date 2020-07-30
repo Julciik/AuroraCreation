@@ -1,13 +1,28 @@
 @import "../core/variables";
 
-.header__top {
-  padding-top: 15px;
+.container {
   border-bottom: $border-grey;
+}
+
+.header__top {
   @media (min-width: $bpoint-mob) {
-    width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 15px;
+  }
+
+  @media (min-width: $bpoint-tab) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    margin-left: 20px;
+  }
+
+  @media (min-width: $bpoint-extra) {
+    margin: 0 auto;
+    width: $max-width;
   }
 }
 
@@ -34,9 +49,18 @@
 
 .header__user {
   font-size: 0;
+
   @media (min-width: $bpoint-mob) {
     margin-top: 15px;
   }
+
+  @media (min-width: $bpoint-tab) {
+    margin-top: 0;
+  }
+
+  // @media (min-width: $bpoint-extra) {
+  //   text-align: right;
+  // }
 }
 
 .user__btn {

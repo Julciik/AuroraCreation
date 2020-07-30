@@ -1,28 +1,38 @@
 @import "../core/variables";
 
 .header__content {
-  width: 100vw;
   padding: 30px 20px;
   display: flex;
   border-bottom: $border-grey;
   position: relative;
+  justify-content: flex-end;
+  align-items: center;
 
-  @media (min-width: $bpoint-mob) {
-    justify-content: flex-end;
-    align-items: center;
+  @media (min-width: $bpoint-large) {
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: $bpoint-extra) {
+    padding: 30px 0;
   }
 }
 
 .header__logo {
-  @media (min-width: $bpoint-mob) {
+  margin-right: auto;
+}
+
+.header__contact {
+  @media (min-width: $bpoint-large) {
     margin-right: auto;
   }
 }
 
-.logo__img {
-}
-
 .header__search {
+  @media (min-width: $bpoint-large) {
+    position: relative;
+    margin: 0 auto;
+    width: 460px;
+  }
 }
 
 .search__input {
@@ -30,6 +40,7 @@
   border: none;
   border-bottom: 1px solid $black;
   font-family: $font-base;
+
   @media (min-width: $bpoint-mob) {
     display: none;
     padding: 10px 5px 5px 5px;
@@ -39,16 +50,38 @@
     width: 50%;
     margin: 0 auto;
   }
+
+  @media (min-width: $bpoint-large) {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0 25px 10px 10px;
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .search__btn {
-  width: 20px;
-  height: 20px;
   border: none;
   padding: 0;
   background-color: transparent;
   background-image: url("../../images/header/search.png");
   background-size: cover;
+
+  @media (min-width: $bpoint-mob) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (min-width: $bpoint-large) {
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    background-size: contain;
+  }
 }
 
 .header__basket {
@@ -62,8 +95,22 @@
 }
 
 .basket__txt {
+  font-weight: $bold;
+  font-size: $font-header;
+  vertical-align: top;
+  margin-left: 5px;
+  transition: color 0.3s ease-in;
+
+  &:hover {
+    color: $pink;
+  }
+
   @media (min-width: $bpoint-mob) {
     display: none;
+  }
+
+  @media (min-width: $bpoint-large) {
+    display: inline-block;
   }
 }
 
@@ -76,9 +123,17 @@
   color: $white;
   font-size: $font-basket;
   position: absolute;
-  right: -5px;
-  bottom: -20%;
   line-height: 20px;
+
+  @media (min-width: $bpoint-mob) {
+    bottom: -20%;
+    right: -5px;
+  }
+
+  @media (min-width: $bpoint-large) {
+    right: 70%;
+    bottom: -25%;
+  }
 }
 
 .search__active {
