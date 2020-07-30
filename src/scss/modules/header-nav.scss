@@ -12,7 +12,7 @@
 
 .nav__hamburger {
   @media (min-width: $bpoint-mob) {
-    height: 30px;
+    height: 25px;
     width: 30px;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
 
 .hamburger__line {
   @media (min-width: $bpoint-mob) {
-    height: 2px;
+    height: 3px;
     width: 100%;
     background-color: $black;
     margin: 3px 0;

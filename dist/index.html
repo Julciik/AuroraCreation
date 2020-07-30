@@ -38,10 +38,11 @@
       <div class="wrapper">
         <div class="header__content">
           <div class="header__logo">
-            <a class="logo__link" href="/"><img
-              class="logo__img"
-              src="./images/header/logo.png"
-              alt="Aurora Box"
+            <a class="logo__link" href="/"
+              ><img
+                class="logo__img"
+                src="./images/header/logo.png"
+                alt="Aurora Box"
             /></a>
           </div>
           <div class="header__search">
@@ -51,50 +52,58 @@
               placeholder="Co chcesz kupić?"
               data-search-input
             />
-            <input class="search__btn" type="submit" value="" data-search-btn></input>
+            <button
+              class="search__btn search__btn--mobile"
+              data-search-btn
+            ></button>
+            <button class="search__btn"></button>
           </div>
           <div class="header__basket">
             <button class="basket__btn">
-              <img class="basket__img" src="./images/header/basket.png" alt="Basket">
+              <img
+                class="basket__img"
+                src="./images/header/basket.png"
+                alt="Basket"
+              />
               <span class="basket__txt">Twój koszyk</span>
               <span class="basket__counter">2</span>
             </button>
           </div>
-        <nav class="header__nav">
-          <button class="nav__hamburger" data-hamburger>
-            <span class="hamburger__line"></span>
-            <span class="hamburger__line"></span>
-            <span class="hamburger__line"></span>
-          </button>
-          <ul class="nav__menu" data-menu>
-            <li class="menu__item">
-              <a href="" class="menu__link">kategorie</a>
-            </li>
-            <li class="menu__item">
-              <a href="" class="menu__link">nowości</a>
-            </li>
-            <li class="menu__item">
-              <a href="" class="menu__link">promocje</a>
-            </li>
-            <li class="menu__item">
-              <a href="" class="menu__link menu__link--sale">wyprzedaże</a>
-            </li>
-            <li class="menu__item">
-              <a href="" class="menu__link">kolekcje sezony</a>
-            </li>
-            <li class="menu__item">
-              <a href="" class="menu__link">nasza oferta</a>
-            </li>
-            <li class="menu__item">
-              <a href="" class="menu__link">trendy 2018</a>
-            </li>
-            <li class="menu__item"><a href="" class="menu__link">blog</a></li>
-            <li class="menu__item">
-              <a href="" class="menu__link">kontakt</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+          <nav class="header__nav">
+            <button class="nav__hamburger" data-hamburger>
+              <span class="hamburger__line"></span>
+              <span class="hamburger__line"></span>
+              <span class="hamburger__line"></span>
+            </button>
+            <ul class="nav__menu" data-menu>
+              <li class="menu__item">
+                <a href="" class="menu__link">kategorie</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">nowości</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">promocje</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link menu__link--sale">wyprzedaże</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">kolekcje sezony</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">nasza oferta</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">trendy 2018</a>
+              </li>
+              <li class="menu__item"><a href="" class="menu__link">blog</a></li>
+              <li class="menu__item">
+                <a href="" class="menu__link">kontakt</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
     <script src="./js/index.js"></script>

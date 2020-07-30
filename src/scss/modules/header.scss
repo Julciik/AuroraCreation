@@ -63,15 +63,19 @@
 }
 
 .search__btn {
-  border: none;
   padding: 0;
-  background-color: transparent;
   background-image: url("../../images/header/search.png");
-  background-size: cover;
 
-  @media (min-width: $bpoint-mob) {
-    width: 20px;
-    height: 20px;
+  &--mobile {
+    @media (min-width: $bpoint-mob) {
+      background-size: cover;
+      width: 25px;
+      height: 25px;
+    }
+
+    @media (min-width: $bpoint-large) {
+      display: none;
+    }
   }
 
   @media (min-width: $bpoint-large) {
@@ -80,7 +84,6 @@
     position: absolute;
     top: 2px;
     right: 0;
-    background-size: contain;
   }
 }
 
