@@ -5,7 +5,6 @@
   display: flex;
   border-bottom: $border-grey;
   position: relative;
-  justify-content: flex-end;
   align-items: center;
 
   @media (min-width: $bpoint-large) {
@@ -88,13 +87,10 @@
 }
 
 .header__basket {
+  position: relative;
   @media (min-width: $bpoint-mob) {
     margin: 0 20px;
   }
-}
-
-.basket__btn {
-  position: relative;
 }
 
 .basket__txt {
